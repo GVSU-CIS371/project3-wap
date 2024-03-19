@@ -1,5 +1,5 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div class="baseBeverage" :style="{ backgroundColor: baseColor }"></div>
 </template>
 
 <script setup lang="ts">
@@ -28,6 +28,10 @@ const Bases: BaseBeverage[] = [
 
 const props = withDefaults(defineProps<Prop>(), {
   name: "Black Tea",
+});
+const baseColor = computed(() => {
+  const selectedBase = Bases.find(base => base.name === props.name);
+  return selectedBase ? selectedBase.color : 'transparent'; // Default to transparent if no base beverage selected
 });
 </script>
 
