@@ -10,7 +10,7 @@
         <Syrup v-if="syrup !== 'None'" :name="syrup" />
       </template>
       <template v-slot:bottom>
-        <Base :name="base" />
+        <Base :name="beverage" />
       </template>
     </Contents>
   </Mug>
@@ -28,7 +28,7 @@ type Props = {
   isIced: boolean;
   creamer: string;
   syrup: string;
-  base: string;
+  beverage: string;
 };
 defineProps<Props>();
 </script>
